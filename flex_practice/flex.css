@@ -1,0 +1,9 @@
+/* flex.css --- control flex box style
+ * author: Max Mancini
+ */
+
+ .flex-images{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+ }
