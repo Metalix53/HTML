@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>➕🕹🎲</title>
+    <style>
+      #plus-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+      }
+      #south {
+        grid-row: 3;
+        grid-column: 2;
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+      }
+      .correctness {
+        display: none;
+      }
+      .current-outcome {
+        display: inline;
+      }
+
+      input {
+        font-size: 2rem;
+        width: 4rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="plus-container">
+      <button id="check">✅</button>
+      <input type="number" onchange="clearThumb()" name="" id="" class="entry" />
+      <div id="result">
+        <span class="correctness" id="correct">👍</span>
+        <span class="correctness" id="incorrect">🤙</span>
+      </div>
+      <input type="number" onchange="clearThumb()" name="" id="" class="entry" />
+      <div id="goal"></div>
+      <input type="number" onchange="clearThumb()" name="" id="" class="entry" />
+      <input type="number" onchange="clearThumb()" name="" id="south" class="entry" />
+    </div>
+    <script>
+      const checkButton = document.getElementById("check");
+      const entries = document.getElementsByClassName("entry");
+      startNewRound();
+      checkButton.onclick = checkAnswers;
+      function checkAnswers(ev) {
+          console.info("clicked check button!", ev);
+          items = document.getElementsByClassName("entry");
+          console.info(items)
+          let count = 0;
+          for (let i = 0; i < items.length; i++){
+            count += items[i].valueAsNumber;
+          }
+          if (count == document.getElementById("goal").innerHTML){
+            document.getElementById("correct").style.display = "initial";
+            setTimeout(() => {
+              clearThumb();
+              for (let i = 0; i < entries.length; i++){
+                entries[i].value = "";
+              }
+              startNewRound();
+            }, 1000);
+          }
+          else {
+            document.getElementById("incorrect").style.display = "initial";
+          }
+
+        };
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      function startNewRound() {
+        document.getElementById("goal").innerHTML = getRandomInt(50);
+        document.getElementById("goal").style.fontSize = "2rem";
+        entries.valueAsNumber = "0";
+      }
+
+      function clearThumb() {
+        document.getElementById("correct").style.display = "none";
+        document.getElementById("incorrect").style.display = "none";
+      }
+
+    </script>
+  </body>
+</html>
