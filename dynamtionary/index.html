@@ -17,10 +17,11 @@
   each separate token (split on spaces) should be added into the div as its 
   own span element. -->
   <textarea cols="30" rows="10" id="text"></textarea>
-  <div id="dynamtionary" style="font-weight: bold;">Known Words: <br></div>
+  <div id="dynamtionary" style="font-weight: bold;"></div>
 
   <!-- 2. add the html for a text input field -->
-
+  <label for="word">Word to Add:</label>
+  <input type="text" id="inp" name="word">
   <!-- 3. whenever the enter/return key is pressed while the focus is on the
     input field, add the "word" in the text field to a list of known words
     (a "dictionary") -->
