@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scavenger Hunt</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🔎">
+</head>
+
+<body>
+  <form action="#">
+    <ol start="0">
+      <li class="top-level"><output id="auto"></output></li>
+      <li class="top-level"><label for="i1">Step 1: What's the password?</label><input type="password" name="1" id="i1">
+        <ol>
+          <li class="top-level"><label for="i1-out">Response Text: </label>
+            <output for="i1" id="i1-out"></output></li>
+        </ol>
+      </li>
+      <li class="top-level"><label for="i2">Step 2</label><input type="text" name="2" id="i2">
+        <ol>
+          <li class="top-level"><label for="i2-out">Response Text: </label><output for="i2" id="i2-out"></output></li>
+        </ol>
+      </li>
+      <li class="top-level"><label for="i3">Step 3</label><input type="text" name="3" id="i3">
+        <ol>
+          <li class="top-level"><label for="i3-out">Response Text: </label><output for="i3" id="i3-out"></output></li>
+        </ol>
+      </li>
+      <li class="top-level"><label for="i4">Step 4</label><input type="text" name="4" id="i4">
+        <ol>
+          <li class="top-level"><label for="i4-out">Response Text: </label><output for="i4" id="i4-out"></output></li>
+        </ol>
+      </li>
+      <li class="top-level"><label for="i5">Step 5</label><input type="text" name="5" id="i5">
+        <ol>
+          <li class="top-level"><label for="i5-out">Response Text: </label><output for="i5" id="i5-out"></output></li>
+        </ol>
+      </li>
+      <li class="top-level"><label for="">Result</label><input type="text" name="done" id="result"></li>
+    </ol>
+    <button type="submit">Done!</button>
+  </form>
+  <script src="lib.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

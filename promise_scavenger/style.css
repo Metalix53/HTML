@@ -1,0 +1,35 @@
+:root {
+  --primary: #450084
+}
+body {
+  margin: 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form>ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+ol {
+  margin: 0;
+}
+
+button {
+  height: 2rem;
+}
+li {
+  display: flex;
+}
+
+output {
+  border: 2px solid var(--primary);
+  border-radius: 2px;
+  min-height: 1rem;
+  min-width: 4rem;
+}
